@@ -44,6 +44,7 @@ export default function Calendar() {
   return (
     <div className="border border-dashed flex flex-wrap gap-2 p-10 justify-center rounded-md">
       {getDateInMonth().map((value, index) => {
+        const log = logs[value];
         return (
           <HoverCard key={index}>
             <HoverCardTrigger>
@@ -51,12 +52,12 @@ export default function Calendar() {
               <div
                 className={cn(
                   "h-5 w-5 rounded-md cursor-pointer",
-                  getColor(hour || 0)
+                  getColor(log?.hour || 0)
                 )}
               ></div>
             </HoverCardTrigger>
             <HoverCardContent className="font-semibold">
-              {hour || 0} hours on {value}
+              {log?.hour || 0} hours on {value}
             </HoverCardContent>
           </HoverCard>
         );

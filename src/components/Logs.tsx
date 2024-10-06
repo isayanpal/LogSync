@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import {
@@ -9,8 +11,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useLogStore } from "@/store";
+import { cn } from "@/lib/utils";
 
 export default function Logs() {
+  // list from supabase
+
+  const logs = useLogStore((state) => state.logs);
+
   return (
     <div>
       <Table>
@@ -23,15 +31,23 @@ export default function Logs() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className="font-semibold">
-              {new Date().toDateString()}
-            </TableCell>
-            <TableCell className="font-semibold">10</TableCell>
-            <TableCell className="font-semibold">
-              This is a placeholder
-            </TableCell>
-          </TableRow>
+          {Object.keys(logs).map((key) => {
+            const log = logs[key];
+
+            const date = log.date as Date;
+            return (
+              <TableRow
+                key={key}
+                className={cn(log.hour <= 5 ? "bg-red-200" : "")}
+              >
+                <TableCell className="font-semibold">
+                  {date.toDateString()}
+                </TableCell>
+                <TableCell className="font-semibold">{log.hour}</TableCell>
+                <TableCell className="font-semibold">{log.note}</TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </div>
