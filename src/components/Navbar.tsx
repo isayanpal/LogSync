@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { FcSynchronize } from "react-icons/fc";
 import { usePathname, useRouter } from "next/navigation";
 
-export default function () {
+export default function Navbar() {
   const router = useRouter();
 
   const path = usePathname();

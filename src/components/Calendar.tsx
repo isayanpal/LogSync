@@ -39,7 +39,7 @@ export default function Calendar() {
     }
   };
 
-  const hour = 0;
+  // const hour = 0;
 
   return (
     <div className="border border-dashed flex flex-wrap gap-2 p-10 justify-center rounded-md">
