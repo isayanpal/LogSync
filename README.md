@@ -17,6 +17,7 @@ LogSync is a simple and efficient web application designed to help you track you
 - 🔐 **Google OAuth Authentication**: Securely log in using your Google account.
 - 🌈 **Clean and Minimal UI**: Designed with ShadCN UI to ensure a modern, clean, and user-friendly experience.
 - 🌍 **Cloud Database**: All data is stored securely with Supabase, ensuring your logs are safe and accessible anywhere.
+- 🗂️ **State Management**: Uses **Zustand** for efficient and lightweight state management.
 - 🚀 **Deployed on Vercel**: Fast and reliable deployment for a smooth user experience.
 
 ## Tech Stack 🛠️
@@ -25,7 +26,9 @@ LogSync is a simple and efficient web application designed to help you track you
 - **ShadCN UI** for a modern and minimalistic user interface.
 - **Supabase** for database management and storing logs.
 - **Google OAuth** for user authentication.
+- **Zustand** for managing the application state.
 - **Vercel** for deployment and hosting.
 
 Stay organized with LogSync and never miss tracking your daily progress!
+
 
